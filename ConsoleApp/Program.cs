@@ -1,4 +1,5 @@
 ﻿using System;
+using OrderLibrary;
 
 namespace ConsoleApp
 {
@@ -6,7 +7,14 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var orderService = new OrderService();
+            var originalPrice = 1200;
+            var realPrice = orderService.GetPrice(originalPrice);
+            Console.WriteLine("Original price:{0}, Real price:{1}", originalPrice, realPrice);
+
+            originalPrice = 800;
+            realPrice = orderService.GetPrice(originalPrice);
+            Console.WriteLine("Original price:{0}, Real price:{1}", originalPrice, realPrice);
         }
     }
 }
