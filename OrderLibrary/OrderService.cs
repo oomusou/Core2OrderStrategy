@@ -6,14 +6,7 @@ namespace OrderLibrary
     {
         public double GetPrice(double price)
         {
-            if (price < 1000)
-            {
-                return price * 0.8;
-            }
-            else
-            {
-                return price - 100;
-            }
+            return StrategyFactory.Create(price).calculatePrice(price);
         }
     }
 }
