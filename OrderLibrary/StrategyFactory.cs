@@ -1,13 +1,13 @@
-﻿using System.Dynamic;
+﻿using System;
 
 namespace OrderLibrary
 {
     public static class StrategyFactory
     {
-        public static CalculatePriceDelegate Create(double price)
+        public static Func<double, double> Create(double price)
         {
             return price < 1000
-                ? (CalculatePriceDelegate) PriceStrategy.CalculateDiscountPrice
+                ? (Func<double, double>) PriceStrategy.CalculateDiscountPrice
                 : PriceStrategy.CalculateRebatePrice;
         }
     }

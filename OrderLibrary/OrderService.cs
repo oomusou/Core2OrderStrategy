@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OrderLibrary
+﻿namespace OrderLibrary
 {
     public class OrderService
     {
