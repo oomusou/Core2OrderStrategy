@@ -4,9 +4,11 @@ namespace OrderLibrary
 {
     public static class StrategyFactory
     {
-        public static StrategyInterface Create(double price)
+        public static CalculatePriceDelegate Create(double price)
         {
-            return price < 1000 ? (StrategyInterface) new DiscountStrategy() : new RebateStrategy();
+            return price < 1000
+                ? (CalculatePriceDelegate) PriceStrategy.CalculateDiscountPrice
+                : PriceStrategy.CalculateRebatePrice;
         }
     }
 }

@@ -6,7 +6,8 @@ namespace OrderLibrary
     {
         public double GetPrice(double price)
         {
-            return StrategyFactory.Create(price).calculatePrice(price);
+            var strategy = StrategyFactory.Create(price); 
+            return strategy(price);
         }
     }
 }
