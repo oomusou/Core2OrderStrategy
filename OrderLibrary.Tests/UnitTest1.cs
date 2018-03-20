@@ -6,7 +6,7 @@ namespace OrderLibrary.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void 當價錢為1200送百後為900()
+        public void 當價錢為1200送百後為1100()
         {
             // Arrange
             var target = new OrderService();
