@@ -7,9 +7,9 @@ namespace OrderLibrary
         public double GetPrice(double price)
         {
             Func<double, Func<double, double>> CreateStrategy =
-                (orignalPrice) => price > 1000
+                orignalPrice => price > 1000
                     ? (Func<double, double>) PriceStrategy.CalculateRebatePrice
-                    : PriceStrategy.CalculateRebatePrice;
+                    : PriceStrategy.CalculateDiscountPrice;
 
             var strategy = CreateStrategy(price);
             return strategy(price);

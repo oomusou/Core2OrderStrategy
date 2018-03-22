@@ -1,4 +1,6 @@
-﻿namespace OrderLibrary
+﻿using System.Runtime.CompilerServices;
+
+namespace OrderLibrary
 {
     public static class PriceStrategy
     {
